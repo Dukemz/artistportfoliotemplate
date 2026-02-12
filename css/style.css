@@ -15,14 +15,6 @@ body {
   background-size: cover;
 }
 
-/* header */
-/* header {
-  padding: 30px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-} */
-
 /* column container */
 .container {
   display: flex;
