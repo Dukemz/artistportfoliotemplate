@@ -3,9 +3,52 @@
   All images are sourced from Microsoft PowerPoint stock background images unless specified otherwise
 */
 
+/* Sansation font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+.sansation-light {
+  font-family: "Sansation", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.sansation-light-italic {
+  font-family: "Sansation", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.sansation-regular {
+  font-family: "Sansation", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sansation-bold {
+  font-family: "Sansation", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.sansation-regular-italic {
+  font-family: "Sansation", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.sansation-bold-italic {
+  font-family: "Sansation", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
 * {
   box-sizing: border-box;
 }
+
+/* html, body {
+  height: 100%;
+} */
 
 body {
   font-family: Arial;
@@ -13,12 +56,19 @@ body {
   background-image: url(../images/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* column container */
 .container {
   display: flex;
   flex-wrap: wrap;
+  /* push footer down */
+  flex: 1;
+  width: 100%;
 }
 
 /* sidebar/left column */
@@ -26,12 +76,13 @@ body {
   flex: 30%;
   background-color: #f1f1f1A0;
   padding: 20px;
+  overflow: hidden;
 }
 
 /* main column */
 .main {
   flex: 70%;
-  background-color: #f1f1f150;
+  background-color: #dddddd80;
   padding: 20px;
 }
 
@@ -42,11 +93,22 @@ body {
   padding: 20px;
 }
 
+img {
+  width: 100%;
+  height: auto;
+  display: block;  
+}
+
 /* footer */
 footer {
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   text-align: center;
-  background: #dddddd80;
+  background: #f1f1f150;
+  display: flex;
+  justify-content: space-between;
+  /* make sure footer doesn't shrink */
+  flex-shrink: 0;
 }
 
 /* navigation bar */
@@ -77,7 +139,16 @@ footer {
   color: black;
 }
 
-/* hide checkbox */
+/* portrait */
+.portrait {
+  width: 100%;
+  height: auto;
+  /* rounded corners */
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* hidden checkbox */
 #menu-toggle {
   display: none;
 }
@@ -96,6 +167,33 @@ footer {
   color: black;
 }
 
+/* store things */
+
+/* store page grid */
+.store-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+/* each store item */
+.store-item {
+  flex: 1 1 calc(33.333% - 20px);
+  /* 3 per row */
+  background-color: #f1f1f1A0;
+  padding: 15px;
+  text-align: center;
+}
+
+/* store images */
+.store-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  /* crops the images to make sure they all fit the same */
+}
+
 /* responsive layout - this triggers when the screen is less than 700px wide */
 @media screen and (max-width: 700px) {
 
@@ -105,6 +203,8 @@ footer {
   .navbar {
     flex-direction: column;
   }
+
+  
 
   .navbar {
     flex-direction: row;
@@ -137,5 +237,10 @@ footer {
 
   .navbar-right a {
     text-align: left;
+  }
+
+  .store-item {
+    flex: 1 1 100%;
+    /* 1 per row */
   }
 }
