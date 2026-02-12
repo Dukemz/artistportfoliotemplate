@@ -1,3 +1,5 @@
+<!-- Assignment 1 by da25977 -->
+<!-- All images are sourced from Microsoft PowerPoint stock background images unless specified otherwise. -->
 <!DOCTYPE html>
 <html>
 
@@ -9,32 +11,40 @@
 </head>
 
 <body>
-    <!-- Header -->
+    <!-- header -->
     <header style="display: none">
         <h1>My Website</h1>
         <p>With a <b>flexible</b> layout.</p>
     </header>
 
-    <!-- Navigation Bar -->
+    <!-- navigation bar -->
     <div class="navbar">
-        <a href="#">Link</a>
-        <a href="#">Link</a>
-        <a href="#">Link</a>
-        <a href="#">Link</a>
+        <a href="#">Artist Name</a>
+
+        <!-- hidden toggle used for mobile hamburger menu -->
+        <!-- it's kinda funny that it's called a hamburger menu -->
+        <input type="checkbox" id="menu-toggle">
+
+        <!-- hamburger menu button -->
+        <!-- why don't they have cheeseburger menus? -->
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <div class="navbar-right">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Store</a>
+            <a href="#">Basket</a>
+        </div>
     </div>
 
-    <!-- Content Container -->
+    <!-- main content -->
     <div class="container">
         <div class="side">
-            <h2>About Me</h2>
-            <h5>Photo of me:</h5>
+            <h2>Lorem</h2>
             <div class="fakeimg" style="height:200px;">Image</div>
             <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
             <h3>More Text</h3>
             <p>Lorem ipsum dolor sit ame.</p>
-            <div class="fakeimg" style="height:60px;">Image</div><br>
-            <div class="fakeimg" style="height:60px;">Image</div><br>
-            <div class="fakeimg" style="height:60px;">Image</div>
         </div>
         <div class="main">
             <h2>TITLE HEADING</h2>
@@ -55,9 +65,9 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- footer -->
     <footer>
-        <h2>Footer</h2>
+        <h2>Copyright Your Mother Inc. All rights reserved.</h2>
     </footer>
 
 </body>
