@@ -1,57 +1,19 @@
 /*
-  Webdev Assignment 1 by da25977
+  Assignment 1 by da25977
   All images are sourced from Microsoft PowerPoint stock background images unless specified otherwise
 */
 
 /* Sansation font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
-.sansation-light {
-  font-family: "Sansation", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.sansation-light-italic {
-  font-family: "Sansation", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.sansation-regular {
-  font-family: "Sansation", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.sansation-bold {
-  font-family: "Sansation", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.sansation-regular-italic {
-  font-family: "Sansation", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.sansation-bold-italic {
-  font-family: "Sansation", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
 * {
   box-sizing: border-box;
 }
 
-/* html, body {
-  height: 100%;
-} */
-
 body {
-  font-family: Arial;
+  font-family: "Sansation";
+  font-weight: 400;
+  font-style: normal;
   margin: 0;
   background-image: url(../images/background.jpg);
   background-repeat: no-repeat;
@@ -76,6 +38,8 @@ body {
   flex: 30%;
   background-color: #f1f1f1A0;
   padding: 20px;
+  padding-top: 10px;
+  /* this is just to make sure content doesn't spill out of the div since it was doing that a few times before */
   overflow: hidden;
 }
 
@@ -86,8 +50,8 @@ body {
   padding: 20px;
 }
 
-/* placeholder image */
-.fakeimg {
+/* placeholder for images */
+.placeholderimg {
   background-color: #aaa;
   width: 100%;
   padding: 20px;
@@ -96,7 +60,9 @@ body {
 img {
   width: 100%;
   height: auto;
-  display: block;  
+  display: block;
+  /* rounded corners */
+  border-radius: 10px;
 }
 
 /* footer */
@@ -143,8 +109,6 @@ footer {
 .portrait {
   width: 100%;
   height: auto;
-  /* rounded corners */
-  border-radius: 10px;
   object-fit: cover;
 }
 
@@ -159,6 +123,7 @@ footer {
   color: white;
   font-size: 26px;
   padding: 6px 20px;
+  /* this changes the mouse cursor so it looks like a link */
   cursor: pointer;
 }
 
@@ -169,12 +134,13 @@ footer {
 
 /* store things */
 
-/* store page grid */
+/* grid of products */
 .store-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
+  height: fit-content;
 }
 
 /* each store item */
@@ -184,6 +150,12 @@ footer {
   background-color: #f1f1f1A0;
   padding: 15px;
   text-align: center;
+  /* rounded corners */
+  border-radius: 10px;
+}
+
+.store-item p {
+  margin-bottom: 2px;
 }
 
 /* store images */
@@ -192,6 +164,100 @@ footer {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   /* crops the images to make sure they all fit the same */
+}
+
+
+/* basket stuff */
+
+.basket-page {
+  max-width: 900px;
+  margin: auto;
+}
+
+.basket-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.basket-item {
+  display: flex;
+  gap: 20px;
+  background-color: #f1f1f1A0;
+  padding: 15px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.basket-item img {
+  width: 120px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.basket-details {
+  flex: 1;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.basket-summary {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #dddddd80;
+  border-radius: 10px;
+}
+
+.basket-total {
+  font-size: 1.3em;
+}
+
+.checkout-btn {
+  margin-top: 15px;
+  padding: 12px 20px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.checkout-btn:hover {
+  background: #555;
+}
+
+
+/* product details stuff */
+.product-image {
+  flex: 1 1 400px;
+}
+
+.product-details {
+  flex: 2 1 500px;
+}
+
+.product-price {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* add to cart button (doesn't actually work) */
+.add-to-cart-btn {
+  padding: 14px 24px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1em;
+  margin: 15px 0;
+}
+
+.add-to-cart-btn:hover {
+  background: #555;
 }
 
 /* responsive layout - this triggers when the screen is less than 700px wide */
@@ -203,8 +269,6 @@ footer {
   .navbar {
     flex-direction: column;
   }
-
-  
 
   .navbar {
     flex-direction: row;
@@ -242,5 +306,16 @@ footer {
   .store-item {
     flex: 1 1 100%;
     /* 1 per row */
+  }
+
+
+  /* basket stuff again but for mobile */
+  .basket-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .basket-item img {
+    width: 100%;
   }
 }
