@@ -112,6 +112,12 @@ footer {
   color: black;
 }
 
+/* on-state (more info in header.php) */
+.navbar a.active {
+  background-color: #ddd;
+  color: black;
+}
+
 /* portrait */
 .portrait {
   width: 100%;

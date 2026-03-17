@@ -1,0 +1,57 @@
+<!-- Assignment 2 by da25977 -->
+<!-- All images are sourced from Microsoft PowerPoint stock background images unless specified otherwise. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Artist Portfolio Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <?php include 'inc/header.php'; ?>
+
+    <!-- main content -->
+    <div class="container">
+        <div class="side">
+            <h2>Abstract Artist Portfolio</h2>
+            <img src="images/abstrsquare.png" alt="An orb comprised of colourful triangles">
+            <p>
+                Artist Name has been producing abstract art for over 5 days. Paintings, both physical and digital, can provide a medium to express what can't be expressed in words. Browse several different varieties of colourful abstract art and explore the different possibilites it can bring you.
+            </p>
+            <h3>Sidebar Heading</h3>
+            <img src="images/abstrwater.jpeg" alt="A close up of pink and blue coloured water">
+            <p>
+                Placeholder text.
+            </p>
+        </div>
+        <div class="main">
+            <h2>TITLE 1</h2>
+            <h5>Subtitle 1.</h5>
+            <img alt="Greyscale abstract art with grey and white circle and diamond shapes" src="images/abstr3.png">
+            <p>
+                Please note that the <a href="details.html">details page</a> is the only page not accessible from the navbar.
+            </p>
+            <p>
+                Placeholder text.
+            </p>
+            <br>
+            <h2>TITLE 2</h2>
+            <h5>Subtitle 2.</h5>
+            <img alt="Greyscale abstract art with grey and white circle and diamond shapes"
+                src="images/background2.jpg">
+            <p>
+                Placeholder text.
+            </p>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <?php include 'inc/footer.php' ?>
+
+</body>
+
+</html>
