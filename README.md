@@ -1,3 +1,3 @@
 # Artist portfolio website thing
 
-[Website link](https://dukemz.github.io/artistportfoliotemplate/)
+This is the dynamic version of the website and will need a PHP engine/MySQL to work correctly.

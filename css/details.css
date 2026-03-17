@@ -1,0 +1,30 @@
+/* product details stuff */
+.product-image {
+  flex: 1 1 400px;
+}
+
+.product-details {
+  flex: 2 1 500px;
+}
+
+.product-price {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* add to cart button (doesn't actually work) */
+.add-to-cart-btn {
+  padding: 14px 24px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1em;
+  margin: 15px 0;
+}
+
+.add-to-cart-btn:hover {
+  background: #555;
+}

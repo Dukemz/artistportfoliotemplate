@@ -1,0 +1,42 @@
+/* store things */
+
+/* grid of products */
+.store-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  height: fit-content;
+}
+
+/* each store item */
+.store-item {
+  flex: 1 1 calc(33.333% - 20px);
+  /* 3 per row */
+  background-color: #f1f1f1A0;
+  padding: 15px;
+  text-align: center;
+  /* rounded corners */
+  border-radius: 10px;
+}
+
+.store-item p {
+  margin-bottom: 2px;
+}
+
+/* store images */
+.store-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  /* crops the images to make sure they all fit the same */
+}
+
+/* responsive layout - this triggers when the screen is less than 700px wide */
+@media screen and (max-width: 700px) {
+
+  .store-item {
+    flex: 1 1 100%;
+    /* 1 per row */
+  }
+}

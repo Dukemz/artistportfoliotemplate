@@ -112,7 +112,7 @@ footer {
   object-fit: cover;
 }
 
-/* hidden checkbox */
+/* hidden checkbox for navbar */
 #menu-toggle {
   display: none;
 }
@@ -130,134 +130,6 @@ footer {
 .menu-icon:hover {
   background-color: #ddd;
   color: black;
-}
-
-/* store things */
-
-/* grid of products */
-.store-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  width: 100%;
-  height: fit-content;
-}
-
-/* each store item */
-.store-item {
-  flex: 1 1 calc(33.333% - 20px);
-  /* 3 per row */
-  background-color: #f1f1f1A0;
-  padding: 15px;
-  text-align: center;
-  /* rounded corners */
-  border-radius: 10px;
-}
-
-.store-item p {
-  margin-bottom: 2px;
-}
-
-/* store images */
-.store-item img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  /* crops the images to make sure they all fit the same */
-}
-
-
-/* basket stuff */
-
-.basket-page {
-  max-width: 900px;
-  margin: auto;
-}
-
-.basket-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.basket-item {
-  display: flex;
-  gap: 20px;
-  background-color: #f1f1f1A0;
-  padding: 15px;
-  border-radius: 10px;
-  align-items: center;
-}
-
-.basket-item img {
-  width: 120px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-}
-
-.basket-details {
-  flex: 1;
-}
-
-.price {
-  font-weight: bold;
-}
-
-.basket-summary {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #dddddd80;
-  border-radius: 10px;
-}
-
-.basket-total {
-  font-size: 1.3em;
-}
-
-.checkout-btn {
-  margin-top: 15px;
-  padding: 12px 20px;
-  border: none;
-  background: #333;
-  color: white;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-.checkout-btn:hover {
-  background: #555;
-}
-
-
-/* product details stuff */
-.product-image {
-  flex: 1 1 400px;
-}
-
-.product-details {
-  flex: 2 1 500px;
-}
-
-.product-price {
-  font-size: 1.6em;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-/* add to cart button (doesn't actually work) */
-.add-to-cart-btn {
-  padding: 14px 24px;
-  border: none;
-  background: #333;
-  color: white;
-  cursor: pointer;
-  border-radius: 8px;
-  font-size: 1em;
-  margin: 15px 0;
-}
-
-.add-to-cart-btn:hover {
-  background: #555;
 }
 
 /* responsive layout - this triggers when the screen is less than 700px wide */
@@ -301,21 +173,5 @@ footer {
 
   .navbar-right a {
     text-align: left;
-  }
-
-  .store-item {
-    flex: 1 1 100%;
-    /* 1 per row */
-  }
-
-
-  /* basket stuff again but for mobile */
-  .basket-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .basket-item img {
-    width: 100%;
   }
 }
