@@ -24,6 +24,11 @@ body {
   min-height: 100vh;
 }
 
+h1, h2 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 /* column container */
 .container {
   display: flex;
@@ -40,7 +45,13 @@ body {
   padding: 20px;
   padding-top: 10px;
   /* this is just to make sure content doesn't spill out of the div since it was doing that a few times before */
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* overflow auto makes it scrollable */
+  min-height: fit-content;
+}
+
+.side, .main {
+  min-width: 0;
 }
 
 /* main column */
@@ -114,15 +125,19 @@ footer {
 
 /* on-state (more info in header.php) */
 .navbar a.active {
-  background-color: #ddd;
-  color: black;
+  color: lightblue;
+}
+
+.navbar a.active:hover {
+  color: darkblue;
 }
 
 /* portrait */
 .portrait {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  /* object-fit: cover; */
+  display: block;
 }
 
 /* hidden checkbox for navbar */
@@ -154,6 +169,11 @@ footer {
   .navbar {
     flex-direction: column;
   }
+
+    .side, .main {
+      flex: none;
+      width: 100%;
+    }
 
   .navbar {
     flex-direction: row;

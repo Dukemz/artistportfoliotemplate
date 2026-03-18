@@ -1,6 +1,7 @@
 /* product details stuff */
 .product-image {
   flex: 1 1 400px;
+  padding-top: 20px;
 }
 
 .product-details {
