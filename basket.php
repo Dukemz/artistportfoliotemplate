@@ -49,7 +49,7 @@
                 <p>Shipping: <strong>£5.00</strong></p>
                 <p class="basket-total">Total: <strong>£150.00</strong></p>
 
-                <button onclick="alert('aight thanks for the money loser')" class="checkout-btn">Checkout</button>
+                <button class="checkout-btn">Checkout</button>
             </div>
 
         </div>
