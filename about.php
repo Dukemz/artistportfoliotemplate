@@ -13,17 +13,7 @@
 
 <body>
     <!-- navbar -->
-    <div class="navbar">
-        <a href="index.html">Artist Name</a>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">☰</label>
-        <div class="navbar-right">
-            <a href="index.html">Home</a>
-            <a href="#">About</a>
-            <a href="store.html">Store</a>
-            <a href="basket.html">Basket</a>
-        </div>
-    </div>
+    <?php include 'inc/header.php'; ?>
 
     <!-- main content -->
     <div class="container">
@@ -67,10 +57,7 @@
     </div>
 
     <!-- footer -->
-    <footer>
-        <p><b>Artist Name</b></p>
-        <p>Copyright Example. All rights reserved.</p>
-    </footer>
+    <?php include 'inc/footer.php'; ?>
 
 </body>
 

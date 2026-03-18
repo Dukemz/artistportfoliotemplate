@@ -1,5 +1,14 @@
 <?php
+// set the currentPage variable to the currently active php file
 $currentPage = basename($_SERVER['PHP_SELF']);
+
+// map with all the navbar items
+$navItems = [
+  "index.php" => "Home",
+  "about.php" => "About",
+  "store.php" => "Store",
+  "basket.php" => "Basket"
+];
 ?>
 
 <div class="navbar">
@@ -9,21 +18,18 @@ $currentPage = basename($_SERVER['PHP_SELF']);
   <label for="menu-toggle" class="menu-icon">☰</label>
 
   <ul class="navbar-right">
-    <li>
-      <!-- 
-        this is a ternary operator, a shorter more compact alternative of an if statement (I've used ternary operators in JS before)
-        effectively what this does is if the current page is index.php, it echoes "active" thus setting this element to be part of the active css class
-      -->
-      <a class="<?= ($currentPage == 'index.php') ? 'active' : '' ?>" href="index.php">Home</a>
-    </li>
-    <li>
-      <a class="<?= ($currentPage == 'about.php') ? 'active' : '' ?>" href="about.php">About</a>
-    </li>
-    <li>
-      <a class="<?= ($currentPage == 'store.php') ? 'active' : '' ?>" href="store.php">Store</a>
-    </li>
-    <li>
-      <a class="<?= ($currentPage == 'basket.php') ? 'active' : '' ?>" href="basket.php">Basket</a>
-    </li>
+    <!-- set file and label variables for each item in the map -->
+    <!-- htmlspecialchars is used to prevent injection just in case -->
+    <?php foreach ($navItems as $file => $label): ?>
+      <li>
+        <!-- if the current page is same as the page listed here, set the class to active via a ternary operator -->
+        <a
+          class="<?= ($currentPage === $file) ? 'active' : '' ?>"
+          href="<?= htmlspecialchars($file) ?>"
+        >
+          <?= htmlspecialchars($label) ?>
+        </a>
+      </li>
+    <?php endforeach; ?>
   </ul>
 </div>

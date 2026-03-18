@@ -33,7 +33,7 @@
             <h5>Subtitle 1.</h5>
             <img alt="Greyscale abstract art with grey and white circle and diamond shapes" src="images/abstr3.png">
             <p>
-                Please note that the <a href="details.html">details page</a> is the only page not accessible from the navbar.
+                Please note that the <a href="details.php">details page</a> is the only page not accessible from the navbar.
             </p>
             <p>
                 Placeholder text.
