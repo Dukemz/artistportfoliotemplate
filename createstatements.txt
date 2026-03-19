@@ -1,0 +1,18 @@
+table for product items:
+
+CREATE TABLE items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    description TEXT,
+    price DECIMAL(6,2) NOT NULL,
+    category VARCHAR(50),
+    date_added DATE DEFAULT CURRENT_DATE,
+    image TEXT
+);
+
+
+
+
+data(items):
+
+INSERT INTO `items` (`id`, `title`, `description`, `price`, `category`, `date_added`, `image`) VALUES (NULL, 'Starlight', 'A vibrant dotted composition.', '19.99', 'abstract', '2026-03-18', 'images/abstr2.png'), (NULL, 'Geometry', 'Dynamic greyscale shapes.', '24.99', 'abstract', '2026-03-18', 'images/abstr1.png')

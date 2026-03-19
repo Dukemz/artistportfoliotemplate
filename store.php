@@ -17,11 +17,11 @@
 
     <!-- main content -->
     <div class="container">
-        
+
         <!-- this is the grid of store items - it should appear as a 3x2 grid on desktop and a straight column on mobile -->
         <div class="store-grid">
 
-            <div class="store-item">
+            <!-- <div class="store-item">
                 <img src="images/abstr2.png" alt="Store Item 1">
                 <p><a href="details.php">Store Item 1</a></p>
             </div>
@@ -49,7 +49,22 @@
             <div class="store-item">
                 <img src="images/abstr7.png" alt="Store Item 6">
                 <p><a href="details.php">Store Item 6</a></p>
-            </div>
+            </div> -->
+
+            <?php
+            require 'inc/db.php';
+
+            $result = $conn->query("SELECT * FROM items");
+
+            // fetch_assoc gets results in a format like a map rather than a standard array
+            // put the database results into the elements
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="store-item">';
+                echo '<img src="' . $row['image'] . '" alt="' . $row['title'] . '">';
+                echo '<p><a href="details.php?id=' . $row['id'] . '" title="' . $row['description'] . '">' . $row['title'] . '</a></p>';
+                echo '</div>';
+            }
+            ?>
 
         </div>
     </div>
