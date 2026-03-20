@@ -1,5 +1,31 @@
 <!-- Assignment 2 by da25977 -->
 <!-- All images are sourced from Microsoft PowerPoint stock background images unless specified otherwise. -->
+
+<?php
+// session code
+session_start();
+require 'inc/db.php';
+
+// handle add to basket
+if (isset($_GET['add'])) {
+    $id = (int) $_GET['add'];
+
+    if (!isset($_SESSION['basket'])) {
+        $_SESSION['basket'] = [];
+    }
+
+    // if item exists, increase quantity
+    if (isset($_SESSION['basket'][$id])) {
+        $_SESSION['basket'][$id]++;
+    } else {
+        $_SESSION['basket'][$id] = 1;
+    }
+
+    header("Location: basket.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +87,8 @@
             </p>
 
             <!-- add to basket -->
-            <button class="add-to-cart-btn" onclick="document.location='basket.php?id=<?= $item['id'] ?>'">
+            <button class="add-to-cart-btn"
+                onclick="document.location='details.php?id=<?= $item['id'] ?>&add=<?= $item['id'] ?>'">
                 Add to Basket
             </button>
 

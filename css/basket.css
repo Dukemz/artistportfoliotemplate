@@ -3,6 +3,7 @@
 .basket-page {
   max-width: 900px;
   margin: auto;
+  border-radius: 10px;
 }
 
 .basket-list {
@@ -28,6 +29,10 @@
 
 .basket-details {
   flex: 1;
+}
+
+.basket-details h3 {
+  margin-top: 0px;
 }
 
 .price {
@@ -59,9 +64,24 @@
   background: #555;
 }
 
-/* responsive layout - this triggers when the screen is less than 700px wide */
+/* controls */
+.basket-controls {
+  margin-top: 10px;
+}
+
+.basket-controls a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.basket-controls a:hover {
+  text-decoration: underline;
+}
+
+
 @media screen and (max-width: 700px) {
-  /* basket stuff again but for mobile */
   .basket-item {
     flex-direction: column;
     align-items: flex-start;
