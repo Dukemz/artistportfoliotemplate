@@ -34,11 +34,18 @@
 
             // fetch_assoc gets results in a format like a map rather than a standard array
             // put the database results into the elements
-            while ($row = $result->fetch_assoc()) {
-                echo '<div class="store-item">';
-                echo '<img src="' . $row['image'] . '" alt="' . $row['title'] . '">';
-                echo '<p><a href="details.php?id=' . $row['id'] . '" title="' . $row['description'] . '">' . $row['title'] . '</a></p>';
-                echo '</div>';
+            while ($row = $result->fetch_assoc()) { ?>
+                <div class="store-item">
+                    <a href="details.php?id=<?= $row['id'] ?>">
+                        <img src="<?= htmlspecialchars($row['image']) ?>" alt="<?= htmlspecialchars($row['title']) ?>">
+                    </a>
+                    <p>
+                        <a href="details.php?id=<?= $row['id'] ?>" title="<?= htmlspecialchars($row['description']) ?>">
+                            <?= htmlspecialchars($row['title']) ?>
+                        </a>
+                    </p>
+                </div>
+                <?php
             }
             ?>
 

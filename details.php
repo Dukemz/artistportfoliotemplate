@@ -98,6 +98,7 @@ if (isset($_GET['add'])) {
             <ul>
                 <li>Category: <?= htmlspecialchars($item['category']) ?></li>
                 <li>Date Added: <?= htmlspecialchars($item['date_added']) ?></li>
+                <li>Featured: <?= $item['featured'] == 1 ? 'Yes' : 'No' ?></li>
             </ul>
         </div>
 
