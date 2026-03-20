@@ -12,44 +12,65 @@
 </head>
 
 <body>
-
     <!-- navbar -->
     <?php include 'inc/header.php'; ?>
+
+    <?php
+    require 'inc/db.php';
+
+    // check if ID exists in URL
+    if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+        echo "<p>Error: Invalid ID in URL. Did you access this page directly?</p>";
+        exit;
+    }
+
+    $id = (int) $_GET['id'];
+
+    // fetch item from database - prepare statement
+    $stmt = $conn->prepare("SELECT * FROM items WHERE id = ?");
+    // bind parameters
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // check if item exists
+    if ($result->num_rows === 0) {
+        echo "<p>Error: Product not found.</p>";
+        exit;
+    }
+
+    $item = $result->fetch_assoc();
+    ?>
 
     <!-- main content -->
     <div class="container">
 
         <!-- product image -->
         <div class="side product-image">
-            <img src="images/background.jpg" alt="Artwork">
+            <img src="<?= htmlspecialchars($item['image']) ?>" alt="<?= htmlspecialchars($item['title']) ?>">
         </div>
 
         <!-- product details -->
         <div class="main product-details">
-            <h1>Merchandise Title</h1>
+            <h1><?= htmlspecialchars($item['title']) ?></h1>
 
-            <p class="product-price">£45.00</p>
-
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget convallis sem. Ut porttitor nisi vitae dolor
-                malesuada, ac consectetur sem luctus. Nullam metus dui, aliquet in faucibus ut, aliquet in sem.
-            </p>
+            <p class="product-price">£<?= number_format($item['price'], 2) ?></p>
 
             <p>
-                In arcu nulla, pharetra vel consequat at, finibus sed libero. Ut dictum felis ut scelerisque feugiat. Etiam dapibus eu
-                lorem id rutrum. Curabitur ut tortor non urna placerat dignissim.
+                <?= nl2br(htmlspecialchars($item['description'])) ?>
             </p>
 
-            <!-- redirect to the basket when clicked (technically doesn't function tho) -->
-            <button class="add-to-cart-btn" onclick="document.location='basket.php'">Add to Basket</button>
+            <!-- add to basket -->
+            <button class="add-to-cart-btn" onclick="document.location='basket.php?id=<?= $item['id'] ?>'">
+                Add to Basket
+            </button>
 
             <hr>
 
             <h3>Details</h3>
             <ul>
-                <li>Colour Variant 1</li>
-                <li>Signed by artist</li>
-                <li>Limited edition</li>
+                <li>Category: <?= htmlspecialchars($item['category']) ?></li>
+                <li>Date Added: <?= htmlspecialchars($item['date_added']) ?></li>
             </ul>
         </div>
 

@@ -1,6 +1,6 @@
 /* product details stuff */
 .product-image {
-  flex: 1 1 400px;
+  /* flex: 1 1 400px; */
   padding-top: 20px;
 }
 
@@ -14,7 +14,6 @@
   margin-bottom: 20px;
 }
 
-/* add to cart button (doesn't actually work) */
 .add-to-cart-btn {
   padding: 14px 24px;
   border: none;
